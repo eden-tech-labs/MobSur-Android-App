@@ -10,12 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MobSur.setup(applicationContext, "686034d7-dbf2-4555-8c7b-7ccfdc84927a", "userId")
+        MobSur.setup(applicationContext, "36121162-25d6-40f1-ab24-d5bd87a47601", "userId")
         MobSur.setFragmentManager(supportFragmentManager)
 
         val button = findViewById(R.id.button) as Button
         button.setOnClickListener {
-            MobSur.event("myevent")
+            MobSur.event("MY_Event")
         }
     }
 }
