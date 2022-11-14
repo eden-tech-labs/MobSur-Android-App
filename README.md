@@ -1,5 +1,5 @@
 # MobSur-Android-App
-A demo Android application which integrates the MobSur Android SDK
+Android sample application which integrates the MobSur Android SDK
 
 To run the project:
 
