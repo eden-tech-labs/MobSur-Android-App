@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobSur Android Demo</string>
+    <string name="sdk_version">MobSur SDK %1$s</string>
 </resources>

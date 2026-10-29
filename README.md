@@ -1,5 +1,7 @@
 # MobSur-Android-App
-Android sample application which integrates the MobSur Android SDK
+Android sample application which integrates the MobSur Android SDK.
+
+Uses SDK **1.4.0** (`app/libs/mobsur.aar`, from [MobSur-Android-SDK](https://github.com/eden-tech-labs/MobSur-Android-SDK)). Needs JDK 17.
 
 To run the project:
 
