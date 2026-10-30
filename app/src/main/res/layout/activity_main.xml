@@ -2,9 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <!-- Drawn behind the status bar; MainActivity pads it by the status bar height. -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name" />
 
     <TextView
         android:id="@+id/sdkVersion"
@@ -18,12 +32,43 @@
     <Button
         android:id="@+id/button"
         android:layout_width="234dp"
-        android:layout_height="46dp"
-        android:text="Start Survey"
+        android:layout_height="wrap_content"
+        android:text="@string/start_survey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintVertical_bias="0.65" />
+
+    <!-- Debug builds only (see MainActivity). -->
+    <LinearLayout
+        android:id="@+id/testUserPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/newTestUser"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:text="@string/new_test_user" />
+
+        <TextView
+            android:id="@+id/testUserHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/test_user_hint"
+            android:textAppearance="?attr/textAppearanceCaption" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
