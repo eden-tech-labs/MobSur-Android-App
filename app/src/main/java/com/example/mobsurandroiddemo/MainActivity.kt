@@ -41,11 +41,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun applyWindowInsets() {
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+        // minHeight includes padding, so grow it by the status bar padding to keep the 56dp bar.
+        val toolbarMinHeight = toolbar.minimumHeight
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root)) { root, insets ->
             val bars = insets.getInsets(
                 WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             )
             toolbar.updatePadding(top = bars.top)
+            toolbar.minimumHeight = toolbarMinHeight + bars.top
             root.updatePadding(left = bars.left, right = bars.right, bottom = bars.bottom)
             insets
         }
