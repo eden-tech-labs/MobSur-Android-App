@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-   Sample data extraction rules file; uncomment and customize as necessary.
-   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
-   for details.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Backup rules for Android 12+. The MobSur SDK state and the demo's test user ID are not
+   backed up or transferred, so a reinstall starts with a fresh user.
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
-        <include .../>
-        <exclude .../>
-        -->
+        <exclude domain="sharedpref" path="MobSur.xml" />
+        <exclude domain="sharedpref" path="demo.xml" />
     </cloud-backup>
-    <!--
     <device-transfer>
-        <include .../>
-        <exclude .../>
+        <exclude domain="sharedpref" path="MobSur.xml" />
+        <exclude domain="sharedpref" path="demo.xml" />
     </device-transfer>
-    -->
 </data-extraction-rules>
